@@ -43,6 +43,75 @@
   着手すべき順番で仕事を列挙できる．
 - 本実装は隣接リストを用いているので$O(|V|+|E|)$．
 
+### 木の直径
+- 木の直径は以下のアルゴリズムで求めることができる．
+  1. 適当な節点$s$から最も遠い節点$x$を求める．
+  2. 節点$x$から最も遠い節点$y$を求める．
+  3. 節点$x$と節点$y$の距離を木の直径として報告する．
+- アルゴリズムの正当性を確認する1つの方法を示す．
+
+とある2つの節点$u$と$v$の距離$d(u, v)$が木の直径であると仮定し，
+上記のアルゴリズムで求まる$d(x, y)$が$d(u, v)$と等しいことを
+示す．
+
+$u, v, s, x, y$の位置関係には3つのパターンが考えられるが，
+ここでは1つのパターンについてのみ考える．パターンの配置は
+参考書を参照されたし．
+
+- 仮定より$d(u, v)$が木の直径であるから
+$$
+\begin{align}
+  & d(u, v) = d(v, u) \geq d(v, x) \notag \\
+  & \Leftrightarrow d(v, w) + d(w, u) \geq d(v, w) + d(w, x) \notag \\
+  & \Leftrightarrow d(w, u) \geq d(w, x)
+\end{align}
+$$
+- 同じく仮定より
+$$
+\begin{equation}
+  d(u, v) \geq d(u, y) \Leftrightarrow d(w, v) \geq d(w, y)
+\end{equation}
+$$
+- アルゴリズムのステップ1で節点$x$を選んでいるため，
+  $s$から最も遠い節点は$x$であり
+$$
+\begin{align}
+  & d(s, x) \geq d(s, u) \notag \\
+  & \Leftrightarrow d(s, z) + d(z, x) \geq d(s, w) + d(w, u)
+\end{align}
+$$
+- アルゴリズムのステップ2で節点$y$を選んでいるいるため，
+  $x$から最も遠い節点は$y$であり
+$$
+\begin{align}
+  &d(x, y) \geq d(x, v) \notag \\
+  &\Leftrightarrow d(x, z) + d(z, y) \geq d(x, z) + d(z, v) \notag \\
+  &\Leftrightarrow d(z, y) \geq d(v, w) + d(w, z)
+\end{align}
+$$
+
+$(1)(2)$式より
+$$
+\begin{align}
+  &d(w, u) + d(w, v) \geq d(w, x) + d(w, y) \notag \\
+  &\Leftrightarrow d(u, v) \geq d(x, y)
+\end{align}
+$$
+
+$(3)(4)$式より
+$$
+d(s, z) + d(z, x) + d(z, y) \geq d(s, w) + d(w, u) + d(v, w) + d(w, z)
+$$
+両辺から$d(s, z)$の分だけ引くと
+$$
+\begin{align}
+  & d(z, x) + d(z, y) \geq d(w, u) + d(v, w) \notag \\
+  & d(x, y) \geq d(u, v)
+\end{align}
+$$
+
+$(5)(6)$式より$d(x, y) = d(u, v)$が示せた．
+
 ### 最小全域木
 - 14章で学習した`Union Find`木を利用した
   クラスカルのアルゴリズムで解く．
