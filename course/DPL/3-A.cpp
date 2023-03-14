@@ -28,9 +28,8 @@ int main(){
     
     int32_t max_width = 0;
     int32_t max_size[H][W];
-    /* max_size[i][j]
-        (i, j)を右下隅とする正方形の辺長の最大値
-    */
+/*  max_size[i][j]
+    (i, j)を右下隅とする正方形の辺長の最大値 */
     rep(i, H){
         rep(j, W){
             if(tile[i][j]){ // is dirty

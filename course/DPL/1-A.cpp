@@ -9,8 +9,8 @@ using namespace std;
 
 int search_best_coins(int *coin, int m, int n) {
     int best[m][n + 1];
-    /* best[i][j]
-        i番目までのコインを使ってj円支払うときのコインの最小枚数 */
+/*  best[i][j]
+    i番目までのコインを使ってj円支払うときのコインの最小枚数 */
     // [HACK]: uint8_tだとmin()関数に渡せなかった
 
     /* 1行目のみ埋める */
@@ -22,8 +22,8 @@ int search_best_coins(int *coin, int m, int n) {
     rep2(i, 1, m) {
         rep(j, n + 1) {
             if(j >= coin[i]){
-                /* コインは何枚でも使用できるため
-                   best[i-1][j-coin[i]]としなくてよい */
+            /* コインは何枚でも使用できるため
+                best[i-1][j-coin[i]]としなくてよい */
                 best[i][j] = min(best[i][j - coin[i]] + 1, best[i - 1][j]);
             } else{
                 best[i][j] = best[i-1][j];

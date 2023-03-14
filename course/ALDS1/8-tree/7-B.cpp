@@ -4,8 +4,6 @@
 
 #define _GLIBCXX_DEBUG
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
-// #define rep2(i, s, n) for (int i = (s); i < (int)(n); i++)
-// #define all(v) v.begin(), v.end()
 
 #define NIL -1
 #define MAX_NODE 25 // 節の数の最大値

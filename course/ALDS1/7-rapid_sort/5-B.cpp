@@ -70,8 +70,8 @@ Node *sort_list(Node *lst, int16_t *cnt) {
     if (q != NULL) {
         q = q->next;  // 3番目の要素
     }
-    /*  ポインタqが末尾に到達したとき
-        pはほぼ中央の要素を指している */
+/*  ポインタqが末尾に到達したとき
+    pはほぼ中央の要素を指している */
     while (q != NULL) {
         p = p->next;
         q = q->next;

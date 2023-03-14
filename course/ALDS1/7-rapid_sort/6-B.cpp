@@ -11,9 +11,9 @@ using namespace std;
 int partition(int32_t *A, int p, int r) {
     int32_t x = A[r];
     int i = p - 1;
-    /*  [p, i]は枢軸以下
-        (i, j]は枢軸より大きい
-        (j, r]は不明    */
+/*  [p, i]は枢軸以下
+    (i, j]は枢軸より大きい
+    (j, r]は不明    */
     rep2(j, p, r) {
         if (A[j] <= x) {
             i += 1;

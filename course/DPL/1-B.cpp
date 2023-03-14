@@ -15,9 +15,8 @@ typedef struct item {
 
 int search_best_items(Item *items, int N, int W) {
     int best[N][W + 1];
-    /* best[i][j]
-        i番目までの品物を考慮して容量がjのナップサックに
-        入れる場合の価値の合計の最大値 */
+/*  best[i][j]
+    i番目までの品物を考慮して容量がjのナップサックに入れる場合の価値の合計の最大値 */
     // [HACK]: intだとmin()関数に渡せなかった
 
     /* 1行目だけ埋める */

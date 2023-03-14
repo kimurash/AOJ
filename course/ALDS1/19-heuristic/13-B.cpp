@@ -20,8 +20,7 @@ typedef struct puzzle {
     int space;           // スペースの位置
     string prcs = "";    // パネルを動かす手順
 
-    /* mapのkeyとして構造体を使う場合は>演算子を
-       オーバーロードする必要がある */
+    // mapのkeyとして構造体を使う場合は>演算子をオーバーロードする必要がある
     bool operator<(const struct puzzle &pzl) const {
         rep(i, N_PANEL) {
             if (this->panel[i] == pzl.panel[i]) {
@@ -92,7 +91,7 @@ string bfs(Puzzle &init) {
     }
 
     // never reached
-    // because given puzzle must be solbed.
+    // because given puzzle must be solved.
     return ("unsolvable");
 }
 

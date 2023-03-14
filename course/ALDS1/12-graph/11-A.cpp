@@ -22,8 +22,8 @@ int main() {
 
     bool adjmat[MAX_EDGE][MAX_EDGE];
     fill(adjmat[0], adjmat[n], false);
-    /*  fill(first, last, value)
-        firstからlastのひとつ手前までの要素にvalueを代入する */
+/*  fill(first, last, value)
+    firstからlastのひとつ手前までの要素にvalueを代入する */
 
     int u, v, outdeg;
     rep(i, n) {
