@@ -13,6 +13,8 @@ using namespace std;
 
 void dfs(bool (*adjmat)[MAX_EDGE], int n);
 void bfs(bool (*adjmat)[MAX_EDGE], int n);
+// XXX: 探索が重いので問題によってはTLE
+// distの大小で訪問済みかは判定できる see JOI2011 予選5
 bool contain(const vector<int> &vec, int elem);
 void print_mat(bool (*mat)[MAX_EDGE], int m, int n);
 
